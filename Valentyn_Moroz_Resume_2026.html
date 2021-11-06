@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentyn Moroz - WordPress/WooCommerce/Shopify Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            width: 32%;
+            background: #1a365d;
+            color: #fff;
+            padding: 25px 20px;
+        }
+
+        .photo {
+            display: block;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            border: 3px solid #4a9eff;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        .photo-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #2d4a6f;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #4a9eff;
+            border: 3px solid #4a9eff;
+        }
+
+        .name {
+            font-size: 16pt;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2px;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 8pt;
+            text-align: center;
+            color: #a0c4ff;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .section-title {
+            font-size: 8pt;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 12px 0 6px;
+            padding-bottom: 3px;
+            border-bottom: 2px solid #4a9eff;
+            color: #fff;
+        }
+
+        .sidebar .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            font-size: 8.5pt;
+        }
+
+        .contact-icon {
+            width: 16px;
+            margin-right: 8px;
+            color: #4a9eff;
+            font-weight: bold;
+        }
+
+        .contact-text {
+            flex: 1;
+            word-break: break-word;
+        }
+
+        .contact-text a {
+            color: #a0c4ff;
+            text-decoration: none;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            padding: 4px 0;
+            font-size: 8.5pt;
+            border-bottom: 1px solid #2d4a6f;
+        }
+
+        .skills-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-category {
+            color: #4a9eff;
+            font-weight: 600;
+            font-size: 8pt;
+            margin-top: 10px;
+            margin-bottom: 4px;
+        }
+
+        .languages-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 8.5pt;
+        }
+
+        .lang-level {
+            color: #a0c4ff;
+            font-size: 8pt;
+        }
+
+        .testimonial {
+            font-style: italic;
+            font-size: 8pt;
+            color: #a0c4ff;
+            border-left: 2px solid #4a9eff;
+            padding-left: 10px;
+            margin-top: 10px;
+        }
+
+        /* Main Content */
+        .main {
+            width: 68%;
+            padding: 25px 30px;
+        }
+
+        .main .section-title {
+            color: #1a365d;
+            border-bottom-color: #1a365d;
+            margin-top: 10px;
+            font-size: 9pt;
+        }
+
+        .main .section-title:first-child {
+            margin-top: 0;
+        }
+
+        .about-text {
+            font-size: 9pt;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .highlight-item {
+            background: #f0f7ff;
+            padding: 5px;
+            border-radius: 4px;
+            border-left: 3px solid #1a365d;
+            text-align: center;
+        }
+
+        .highlight-number {
+            font-size: 12pt;
+            font-weight: 700;
+            color: #1a365d;
+        }
+
+        .highlight-text {
+            font-size: 6pt;
+            color: #666;
+        }
+
+        .job {
+            margin-bottom: 8px;
+            page-break-inside: avoid;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 3px;
+        }
+
+        .job-title {
+            font-size: 10pt;
+            font-weight: 600;
+            color: #1a365d;
+        }
+
+        .job-period {
+            font-size: 8pt;
+            color: #888;
+            white-space: nowrap;
+        }
+
+        .job-company {
+            font-size: 8.5pt;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .job-company a {
+            color: #4a9eff;
+            text-decoration: none;
+        }
+
+        .job-description {
+            font-size: 8.5pt;
+            color: #555;
+            margin-bottom: 3px;
+        }
+
+        .job-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-list li {
+            font-size: 8.5pt;
+            color: #555;
+            padding-left: 12px;
+            position: relative;
+            margin-bottom: 2px;
+        }
+
+        .job-list li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: #4a9eff;
+            font-weight: bold;
+        }
+
+        .project {
+            background: #f8fafc;
+            padding: 6px 10px;
+            border-radius: 6px;
+            margin-bottom: 6px;
+            border-left: 3px solid #1a365d;
+        }
+
+        .project-title {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 4px;
+        }
+
+        .project-tech {
+            font-size: 7.5pt;
+            color: #4a9eff;
+            margin-bottom: 4px;
+        }
+
+        .project-desc {
+            font-size: 8.5pt;
+            color: #555;
+        }
+
+        .education-item {
+            margin-bottom: 8px;
+        }
+
+        .edu-degree {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #1a365d;
+        }
+
+        .edu-school {
+            font-size: 8.5pt;
+            color: #666;
+        }
+
+        .edu-year {
+            font-size: 8pt;
+            color: #888;
+        }
+
+        .military-badge {
+            display: inline-block;
+            background: #1a365d;
+            color: #fff;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 7pt;
+            margin-left: 5px;
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .container {
+                min-height: auto;
+            }
+            .sidebar {
+                background: #1a365d !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="original.jfif" alt="Valentyn Moroz" class="photo" onerror="this.outerHTML='<div class=\'photo-placeholder\'>VM</div>'">
+            <div class="name">VALENTYN MOROZ</div>
+            <div class="title">WordPress / WooCommerce / Shopify<br>Full-Stack Developer</div>
+
+            <div class="section-title">Contact</div>
+            <div class="contact-item">
+                <span class="contact-icon">@</span>
+                <span class="contact-text">morozvalentyn777@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">T</span>
+                <span class="contact-text">+380 96 709 8073</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">L</span>
+                <span class="contact-text">Vinnytsia, Ukraine</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">U</span>
+                <span class="contact-text"><a href="https://www.upwork.com/freelancers/~013563a358160baa29">Upwork Profile</a></span>
+            </div>
+
+            <div class="section-title">Tech Stack</div>
+
+            <div class="skill-category">Backend</div>
+            <ul class="skills-list">
+                <li>PHP, WordPress Core, Hooks</li>
+                <li>WooCommerce Extensions</li>
+                <li>Shopify (Liquid, Apps)</li>
+                <li>REST API, GraphQL</li>
+                <li>Symfony (API Services)</li>
+                <li>MySQL, Custom Plugins</li>
+            </ul>
+
+            <div class="skill-category">Frontend</div>
+            <ul class="skills-list">
+                <li>JavaScript, React</li>
+                <li>Gutenberg Blocks</li>
+                <li>HTML5, CSS3, SCSS</li>
+            </ul>
+
+            <div class="skill-category">Integrations</div>
+            <ul class="skills-list">
+                <li>Stripe, PayPal, WooPayments</li>
+                <li>SendGrid, Twilio</li>
+                <li>OpenAI API, AI Systems</li>
+                <li>CRM/ERP (Billbee, Odoo)</li>
+            </ul>
+
+            <div class="skill-category">DevOps</div>
+            <ul class="skills-list">
+                <li>Git, GitHub</li>
+                <li>Docker, Linux, SSH</li>
+            </ul>
+
+            <div class="skill-category">Automation</div>
+            <ul class="skills-list">
+                <li>Puppeteer, Web Scraping</li>
+                <li>Data Extraction Pipelines</li>
+            </ul>
+
+            <div class="section-title">Languages</div>
+            <div class="languages-item">
+                <span>Ukrainian</span>
+                <span class="lang-level">Native</span>
+            </div>
+            <div class="languages-item">
+                <span>English</span>
+                <span class="lang-level">Fluent</span>
+            </div>
+
+            <div class="section-title">Client Review</div>
+            <div class="testimonial">
+                "Valentin is one of the few developers who actually understands the business logic behind the code. He fixes problems without breaking production and communicates clearly."
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="section-title">Profile</div>
+            <p class="about-text">
+                Senior WordPress/WooCommerce Full-Stack Developer with <strong>16+ years</strong> of hands-on experience. I specialize in <strong>custom plugins, headless architecture, WooCommerce extensions, Shopify apps, and AI integrations</strong>. Expert at cleaning up complex systems after migrations, fixing critical production issues, and building solutions that fit existing business workflows. Proven track record on Upwork with clients from USA and Europe.
+            </p>
+
+            <div class="highlights">
+                <div class="highlight-item">
+                    <div class="highlight-number">16+</div>
+                    <div class="highlight-text">Years Experience</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-number">30+</div>
+                    <div class="highlight-text">Projects</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-number">100%</div>
+                    <div class="highlight-text">Job Success</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-number">5.0</div>
+                    <div class="highlight-text">Rating</div>
+                </div>
+            </div>
+
+            <div class="section-title">Key Projects</div>
+
+            <div class="project">
+                <div class="project-title">Headless WordPress + Newsletter System</div>
+                <div class="project-tech">Headless CMS | REST API | SendGrid | Editorial Workflow</div>
+                <div class="project-desc">Built headless CMS for blog/news section with custom frontend, role-based access control, and SendGrid integration. Content team now works independently without developer involvement.</div>
+            </div>
+
+            <div class="project">
+                <div class="project-title">WooCommerce Voucher & Loyalty System</div>
+                <div class="project-tech">WooCommerce | Billbee API | VAT Handling | Production Fix</div>
+                <div class="project-desc">Custom gift certificate logic + billing integration. Fixed critical production bug in version comparison without downtime. Client preserved existing workflow.</div>
+            </div>
+
+            <div class="project">
+                <div class="project-title">AI-Powered Product Matching Plugin</div>
+                <div class="project-tech">OpenAI API | WordPress | Shopify | JSON Decision Engine</div>
+                <div class="project-desc">AI module for personalized clothing recommendations based on user parameters. Improved conversion rate with scalable SaaS-ready architecture.</div>
+            </div>
+
+            <div class="section-title">Work Experience</div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">WordPress & Shopify Developer</span>
+                    <span class="job-period">2023 - Present</span>
+                </div>
+                <div class="job-company">Catecut | AI Fashion Tech</div>
+                <ul class="job-list">
+                    <li>Built AI-powered WordPress plugin for personalized clothing recommendations using OpenAI API</li>
+                    <li>Developed Shopify app with custom Liquid templates and GraphQL API integration</li>
+                    <li>Implemented JSON-based decision engine for product matching algorithm</li>
+                    <li>Created admin dashboard for managing AI parameters and analytics tracking</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Senior WordPress Developer</span>
+                    <span class="job-period">2020 - 2023</span>
+                </div>
+                <div class="job-company">Upwork | Freelance (USA, EU clients)</div>
+                <ul class="job-list">
+                    <li>Delivered 30+ custom WordPress projects: themes, plugins, WooCommerce extensions</li>
+                    <li>Built headless WordPress setups with React/Next.js frontends using REST API & GraphQL</li>
+                    <li>Integrated payment gateways (Stripe, PayPal, WooPayments) with custom checkout flows</li>
+                    <li>Connected third-party services: SendGrid, Twilio, CRMs (Salesforce, HubSpot, Zoho)</li>
+                    <li>Production debugging, performance optimization, and safe refactoring of legacy codebases</li>
+                    <li>Developed custom Gutenberg blocks and FSE (Full Site Editing) themes</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">WordPress Developer & Project Manager</span>
+                    <span class="job-period">2016 - 2020</span>
+                </div>
+                <div class="job-company">APN Coders | India (Remote Lead)</div>
+                <ul class="job-list">
+                    <li>Led remote team of 5 developers on enterprise WordPress and WooCommerce projects</li>
+                    <li>Architected scalable e-commerce solutions handling 10K+ daily visitors</li>
+                    <li>Managed project timelines, sprints, and deliverables using Agile methodology</li>
+                    <li>Direct client communication in English (USA, EU, Australia) - requirements gathering, demos</li>
+                    <li>Code review, mentoring junior developers, establishing coding standards</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">IT Specialist, 30th Mechanized Brigade</span>
+                    <span class="job-period">2014 - 2016</span>
+                </div>
+                <div class="job-company">Armed Forces of Ukraine <span class="military-badge">ATO Veteran</span></div>
+                <p class="job-description">Ensured secure communications for tank battalion during Anti-Terrorist Operation.</p>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">WordPress Developer</span>
+                    <span class="job-period">2008 - 2014</span>
+                </div>
+                <div class="job-company">Self-employed | Medical & Healthcare Websites</div>
+                <ul class="job-list">
+                    <li>Built custom appointment booking systems with SMS/email notifications</li>
+                    <li>Developed patient portals with secure data handling and privacy compliance</li>
+                    <li>Created network of 15+ medical websites with on-page SEO optimization</li>
+                    <li>Implemented multilingual support and accessibility features (WCAG)</li>
+                    <li>Managed hosting, SSL certificates, backups, and security updates</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Education</div>
+            <div class="education-item">
+                <div class="edu-degree">Master of Science in Computer Engineering</div>
+                <div class="edu-school">Vinnytsia National Technical University</div>
+                <div class="edu-year">2008 | Thesis: Fingerprint Recognition Algorithm</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
