@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Valentyn Moroz - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
@@ -12,7 +15,7 @@
       <p class="eyebrow">Portfolio</p>
       <h1>Recent Projects & Production Work</h1>
       <p class="subtitle">
-        Real repos, real delivery: WordPress, React/Vite, Firebase, scraping, automation, and system maintenance.
+        Real repositories and production delivery: WordPress, React/Vite, Firebase, scraping, automation, and long-term maintenance.
       </p>
       <div class="hero__links">
         <a class="btn btn--primary" href="https://github.com/uaeconomclass" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
@@ -38,6 +41,7 @@
 
     <section class="section">
       <h2>Recent Projects</h2>
+      <p class="section-intro">Selected repositories and client tracks from recent production work.</p>
       <div class="grid">
         <article class="card">
           <div class="card__meta"><span>2026-02-13</span><span>Client work</span></div>
@@ -92,7 +96,7 @@
           <h3>Deti-Svet</h3>
           <p>Full WordPress codebase maintenance and operational updates on a production website with custom integrations.</p>
           <p class="stack">Stack: WordPress, PHP, Plugin ecosystem</p>
-          <a href="https://github.com/uaeconomclass/deti-svet" target="_blank" rel="noopener noreferrer">Open repository</a>
+          <span class="muted">Private client repository</span>
         </article>
 
         <article class="card">
@@ -100,7 +104,7 @@
           <h3>SPM-MOS</h3>
           <p>Business website updates, pricing fixes, and ongoing support on a live project site.</p>
           <p class="stack">Stack: HTML, CSS, JavaScript, PHP</p>
-          <a href="https://github.com/uaeconomclass/spm-mos" target="_blank" rel="noopener noreferrer">Open repository</a>
+          <span class="muted">Private client repository</span>
         </article>
 
         <article class="card">
@@ -108,7 +112,7 @@
           <h3>Women Invest</h3>
           <p>Custom WordPress theme-level changes, layout styling updates, media handling and UI adjustments.</p>
           <p class="stack">Stack: WordPress Theme, PHP Templates, CSS</p>
-          <a href="https://github.com/uaeconomclass/women-invest" target="_blank" rel="noopener noreferrer">Open repository</a>
+          <span class="muted">Private client repository</span>
         </article>
 
         <article class="card">
@@ -118,6 +122,213 @@
           <p class="stack">Stack: Lua, Rojo, Wally, Selene, StyLua</p>
           <a href="https://github.com/uaeconomclass/roblox" target="_blank" rel="noopener noreferrer">Open repository</a>
         </article>
+      </div>
+    </section>
+
+    <section class="section upwork">
+      <div class="upwork__head">
+        <h2>Upwork Delivery Highlights</h2>
+        <p class="upwork__subtitle">Completed work only: closed deliveries and finished milestones from long-term contracts.</p>
+        <p class="upwork__stamp">Data snapshot: February 2026</p>
+      </div>
+
+      <div class="kpi-grid">
+        <article class="kpi">
+          <p class="kpi__label">Total Contracts</p>
+          <p class="kpi__value">111</p>
+        </article>
+        <article class="kpi">
+          <p class="kpi__label">Closed Contracts</p>
+          <p class="kpi__value">106</p>
+        </article>
+        <article class="kpi">
+          <p class="kpi__label">Active Contracts</p>
+          <p class="kpi__value">5</p>
+        </article>
+      </div>
+
+      <div class="delivery-grid">
+        <article class="delivery-card">
+          <h3>Kemtai Internal Pages Recovery</h3>
+          <p class="client-name">Client: Yair Hadar (Kemtai)</p>
+          <p>Recovered broken internal pages and restored missing media visibility on key sections, including critical demo-related pages.</p>
+          <p class="stack">Stack: WordPress admin recovery, media/content troubleshooting</p>
+          <p class="links-row"><a href="https://kemtai.com/" target="_blank" rel="noopener noreferrer">Live website</a></p>
+        </article>
+
+        <article class="delivery-card">
+          <h3>WeRecoverData Website Delivery</h3>
+          <p class="client-name">Client: Tal Hakim (WeRecoverData)</p>
+          <p>Delivered WordPress production work including site tweaks, layout/content updates, and ongoing maintenance support on a live business website.</p>
+          <p class="stack">Stack: WordPress, PHP templates, frontend/UI fixes</p>
+          <p class="links-row"><a href="https://www.werecoverdata.com/" target="_blank" rel="noopener noreferrer">Live website</a></p>
+        </article>
+
+        <article class="delivery-card">
+          <h3>Voucher + Cart Price Bugfix (WooCommerce)</h3>
+          <p class="client-name">Client: Moritz Bauer (Bauer Trading GmbH)</p>
+          <p>Diagnosed and fixed voucher/cart flow where product total was broken. Delivered production-safe patch and handoff.</p>
+          <p class="stack">Stack: WooCommerce, PHP, plugin debugging</p>
+          <p class="links-row"><a href="https://supervolt.de/geschenkgutschein/" target="_blank" rel="noopener noreferrer">Live page touched</a></p>
+        </article>
+
+        <article class="delivery-card">
+          <h3>Feed Pricing Logic Updates</h3>
+          <p class="client-name">Client: Moritz Bauer (Bauer Trading GmbH)</p>
+          <p>Completed pricing adjustments in product feed flow and delivered follow-up fixes tied to checkout behavior.</p>
+          <p class="stack">Stack: WooCommerce feeds, business rules, QA</p>
+          <p class="links-row"><a href="https://supervolt.de/" target="_blank" rel="noopener noreferrer">Live website</a></p>
+        </article>
+
+        <article class="delivery-card">
+          <h3>Search Plugin Rollout Across Site</h3>
+          <p class="client-name">Client: Gabriel Whittemore</p>
+          <p>Implemented shortcode-based search deployment and closed styling/adaptation tasks for new homepage layout.</p>
+          <p class="stack">Stack: WordPress plugin integration, CSS</p>
+          <p class="links-row"><a href="https://lcls-2.tempurl.host/home" target="_blank" rel="noopener noreferrer">Live page touched</a></p>
+        </article>
+
+        <article class="delivery-card">
+          <h3>Mobile Styling and UI Corrections</h3>
+          <p class="client-name">Client: Gabriel Whittemore</p>
+          <p>Closed mobile visual regressions and delivered final UI polish after cache checks and retesting.</p>
+          <p class="stack">Stack: responsive CSS, WordPress theme/plugin UI</p>
+        </article>
+
+        <article class="delivery-card">
+          <h3>Plugin Feature Completion</h3>
+          <p class="client-name">Client: Multiple WP clients</p>
+          <p>Delivered plugin-side bugfixes and completed incremental feature tasks within ongoing support contracts.</p>
+          <p class="stack">Stack: WordPress plugins, PHP, production support</p>
+        </article>
+
+        <article class="delivery-card">
+          <h3>Theme Bugfixing and Hardening</h3>
+          <p class="client-name">Client: WordPress maintenance contracts</p>
+          <p>Completed theme-level bugfixes and stabilization work to keep production behavior predictable after updates.</p>
+          <p class="stack">Stack: WordPress themes, template fixes, regression checks</p>
+        </article>
+      </div>
+
+      <h3 class="subhead">Additional Completed Contract Tracks</h3>
+      <div class="delivery-grid delivery-grid--compact">
+        <article class="delivery-card">
+          <h3>Elementor + JS Production Fixes</h3>
+          <p class="client-name">Closed contract track: WP Developer with Elementor and JS experience</p>
+          <p>Delivered front-end behavior fixes and component-level adjustments on live WordPress pages with JS dependencies.</p>
+          <p class="stack">Stack: Elementor, JavaScript, WordPress frontend</p>
+        </article>
+
+        <article class="delivery-card">
+          <h3>WordPress Website Support Stream</h3>
+          <p class="client-name">Closed contract track: WordPress Website Support</p>
+          <p>Long-running support delivery covering ongoing fixes, layout updates, and maintenance on production websites.</p>
+          <p class="stack">Stack: WordPress support, PHP/CSS fixes, QA</p>
+          <p class="links-row"><a href="https://catecut.com/" target="_blank" rel="noopener noreferrer">Related live site</a></p>
+        </article>
+
+        <article class="delivery-card">
+          <h3>ACF Backend Implementation Tasks</h3>
+          <p class="client-name">Closed contract track: WordPress backend ACF task</p>
+          <p>Implemented and updated backend field logic with content-structure consistency for client-editable admin flows.</p>
+          <p class="stack">Stack: WordPress, ACF, content modeling</p>
+        </article>
+
+        <article class="delivery-card">
+          <h3>Performance and SEO Speed Optimization</h3>
+          <p class="client-name">Closed contract track: WordPress Google PageSpeed SEO Speed Optimizations</p>
+          <p>Completed optimization tasks focused on frontend loading behavior and practical Core Web Vitals improvements.</p>
+          <p class="stack">Stack: performance tuning, asset optimization, WordPress</p>
+          <p class="links-row"><a href="https://parsempo.com/" target="_blank" rel="noopener noreferrer">Related live site</a></p>
+        </article>
+
+        <article class="delivery-card">
+          <h3>Automation QA Engineering Delivery</h3>
+          <p class="client-name">Closed contract track: Automation QA Engineer</p>
+          <p>Delivered automated test-related engineering tasks for web workflows and reliability checks in production-like scenarios.</p>
+          <p class="stack">Stack: Node.js, Puppeteer, test automation</p>
+        </article>
+
+        <article class="delivery-card">
+          <h3>PSD to HTML Implementation</h3>
+          <p class="client-name">Closed contract track: PSD to HTML using Bootstrap4 and jQuery</p>
+          <p>Converted design source files into responsive, browser-ready front-end templates and finalized visual QA passes.</p>
+          <p class="stack">Stack: HTML, Bootstrap, jQuery, responsive layout</p>
+          <p class="links-row"><a href="https://braverslun.is/" target="_blank" rel="noopener noreferrer">Related live site</a></p>
+        </article>
+      </div>
+
+      <div class="proof">
+        <h3>Client Appreciation Snippets</h3>
+        <p class="section-intro">Direct quotes from client rooms after completed fixes and deliveries.</p>
+        <div class="proof-grid">
+          <blockquote>
+            <p>"This is fantastic! Thanks so much man. Awesome work."</p>
+            <cite>Gabriel Whittemore, 2025-12-31</cite>
+          </blockquote>
+          <blockquote>
+            <p>"Huge thanks for all of this. It's looking fantastic."</p>
+            <cite>Gabriel Whittemore, 2025-12-29</cite>
+          </blockquote>
+          <blockquote>
+            <p>"Perfect! Thanks man. Appreciate you checking."</p>
+            <cite>Gabriel Whittemore, 2025-12-31</cite>
+          </blockquote>
+          <blockquote>
+            <p>"Hi Valentyn, thanks for fixing the voucher plugin!"</p>
+            <cite>Moritz Bauer, 2026-01-19</cite>
+          </blockquote>
+          <blockquote>
+            <p>"seems ok, thanks!"</p>
+            <cite>Yair Hadar (Kemtai), 2025-06-11</cite>
+          </blockquote>
+          <blockquote>
+            <p>"Hi, Nice now it looks good."</p>
+            <cite>Moritz Bauer, 2025-11-06</cite>
+          </blockquote>
+          <blockquote>
+            <p>"Sounds good on all fronts! ... I'll prep the accessibility documentation today and get you access to a repo."</p>
+            <cite>Gabriel Whittemore, 2026-01-14</cite>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="delivery-media">
+        <h3>Live Work Snapshots</h3>
+        <div class="thumb-grid">
+          <figure>
+            <img src="https://image.thum.io/get/width/1200/noanimate/https://supervolt.de/" alt="Supervolt website snapshot" loading="lazy">
+            <figcaption>supervolt.de (WooCommerce delivery work)</figcaption>
+          </figure>
+          <figure>
+            <img src="https://image.thum.io/get/width/1200/noanimate/https://lcls-2.tempurl.host/home" alt="LCLS website snapshot" loading="lazy">
+            <figcaption>lcls-2.tempurl.host/home (search + styling delivery)</figcaption>
+          </figure>
+          <figure>
+            <img src="https://image.thum.io/get/width/1200/noanimate/https://kemtai.com/" alt="Kemtai website snapshot" loading="lazy">
+            <figcaption>kemtai.com (internal pages recovery and media fixes)</figcaption>
+          </figure>
+          <figure>
+            <img src="https://image.thum.io/get/width/1200/noanimate/https://www.werecoverdata.com/" alt="WeRecoverData website snapshot" loading="lazy">
+            <figcaption>werecoverdata.com (WordPress delivery and maintenance work)</figcaption>
+          </figure>
+          <figure>
+            <img src="https://image.thum.io/get/width/1200/noanimate/https://catecut.com/" alt="Catecut website snapshot" loading="lazy">
+            <figcaption>catecut.com (client-facing WordPress delivery sample)</figcaption>
+          </figure>
+          <figure>
+            <img src="https://image.thum.io/get/width/1200/noanimate/https://braverslun.is/" alt="Braverslun website snapshot" loading="lazy">
+            <figcaption>braverslun.is (frontend/WordPress delivery sample)</figcaption>
+          </figure>
+          <figure>
+            <img src="https://image.thum.io/get/width/1200/noanimate/https://parsempo.com/" alt="Parsempo website snapshot" loading="lazy">
+            <figcaption>parsempo.com (performance and implementation sample)</figcaption>
+          </figure>
+          <figure>
+            <img src="https://image.thum.io/get/width/1200/noanimate/https://emom.is/" alt="Emom website snapshot" loading="lazy">
+            <figcaption>emom.is (additional delivered website sample)</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
