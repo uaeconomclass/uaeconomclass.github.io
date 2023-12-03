@@ -1,6 +1,6 @@
 # Valentyn Moroz
 
-**WordPress / WooCommerce / Shopify**  
+**WordPress / React / Firebase**  
 **Full-Stack Developer**
 
 📍 Vinnytsia, Ukraine  
@@ -13,8 +13,8 @@
 
 ## Profile
 
-Full-Stack **WordPress / WooCommerce Developer** with **12+ years of professional experience**.  
-I specialize in **custom plugins**, **WooCommerce extensions**, **headless WordPress architecture**, **Shopify apps**, and **API integrations**.
+Full-Stack **WordPress / React / Firebase Developer** with **18+ years of professional experience**.  
+I specialize in **custom plugins**, **WooCommerce extensions**, **headless WordPress architecture**, **React + Firebase applications**, and **API integrations**.
 
 My core strength is working with **real production systems**: stabilizing legacy code, post-migration cleanup, fixing critical issues without downtime, and building solutions that fit existing business workflows instead of breaking them.
 
@@ -24,8 +24,7 @@ Consistently positive feedback from clients in **USA and Europe**.
 
 ## Key Metrics
 
-- **12+ years** of experience  
-- **30+ commercial projects delivered**  
+- **18+ years** of experience  
 - **100% Job Success Score** (Upwork)  
 - **5.0 rating**
 
@@ -42,9 +41,10 @@ Consistently positive feedback from clients in **USA and Europe**.
 - MySQL, Custom Plugins
 
 ### Frontend
-- JavaScript, React  
+- JavaScript, React, Vite  
+- Firebase / Firestore  
 - Gutenberg Blocks  
-- HTML5, CSS3, SCSS
+- HTML5, CSS3, SCSS, Tailwind
 
 ### Integrations
 - Stripe, PayPal, WooPayments  
@@ -65,6 +65,7 @@ Consistently positive feedback from clients in **USA and Europe**.
 ## Languages
 
 - **Ukrainian** — Native  
+- **Russian** — Native  
 - **English** — B2 (Professional working proficiency)
 
 ---
@@ -102,8 +103,19 @@ Designed as a **SaaS-ready architecture** with scalable multi-tenant support.
 
 ## Work Experience
 
+### PHP / WordPress / React Developer  
+**Dec 2025 – Present**  
+**oak-tree.tech**
+
+- WordPress plugin development: custom Gutenberg blocks, shortcode APIs, admin tooling, REST endpoints  
+- React + Vite + Firebase/Firestore: admin dashboards, user-facing platforms, PR-based delivery workflow  
+- WordPress production maintenance: CF7 integrations, CSS refactors, multi-site client support  
+- Custom plugins for LibCal calendar embedding and email export tooling
+
+---
+
 ### WordPress & Shopify Developer  
-**2023 – Present**  
+**2023 – 2025**  
 **Catecut | AI Fashion Tech**
 
 - Built AI-powered WordPress plugin for personalized clothing recommendations using OpenAI API  
