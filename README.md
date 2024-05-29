@@ -125,9 +125,9 @@ Designed as a **SaaS-ready architecture** with scalable multi-tenant support.
 
 ---
 
-### Senior WordPress Developer  
+### WordPress Developer  
 **2020 – 2023**  
-**Upwork | Freelance (USA, EU clients)**
+**YellowFever LLC.**
 
 - Delivered 30+ custom WordPress projects (themes, plugins, WooCommerce extensions)  
 - Built headless WordPress setups with React/Next.js frontends  
@@ -140,7 +140,7 @@ Designed as a **SaaS-ready architecture** with scalable multi-tenant support.
 
 ### WordPress Developer & Project Manager  
 **2016 – 2020**  
-**APN Coders | Remote (India)**
+**APN Coders**
 
 - Led a remote team of 5 developers  
 - Architected scalable WooCommerce solutions (10K+ daily visitors)  
