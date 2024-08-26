@@ -160,7 +160,7 @@ Designed as a **SaaS-ready architecture** with scalable multi-tenant support.
 
 ### WordPress Developer  
 **2008 – 2014**  
-**Self-employed | Medical & Healthcare Websites**
+**Private Entrepreneur | Medical & Healthcare**
 
 - Built custom appointment booking systems with SMS/email notifications  
 - Developed patient portals with secure data handling  
