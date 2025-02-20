@@ -15,7 +15,7 @@
       <p class="eyebrow">Portfolio</p>
       <h1>Recent Projects & Production Work</h1>
       <p class="subtitle">
-        Real repositories and production delivery: WordPress, React/Vite, Firebase, scraping, automation, and long-term maintenance.
+        Real repositories and production delivery: Figma-to-WordPress builds (Elementor, Bricks, Gutenberg), WooCommerce, Next.js SaaS, WCAG 2.2 accessibility, performance and security rescue, automation.
       </p>
       <div class="hero__links">
         <a class="btn btn--primary" href="https://github.com/uaeconomclass" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
@@ -30,8 +30,12 @@
       <h2>What I Build</h2>
       <div class="chips">
         <span class="chip">WordPress / WooCommerce</span>
+        <span class="chip">Figma → Elementor / Bricks</span>
         <span class="chip">React + Vite</span>
+        <span class="chip">Next.js + PostgreSQL</span>
         <span class="chip">Firebase</span>
+        <span class="chip">WCAG 2.2 Accessibility</span>
+        <span class="chip">Performance & Security</span>
         <span class="chip">API Integrations</span>
         <span class="chip">Automation & Scraping</span>
         <span class="chip">Production Bugfixing</span>
@@ -44,9 +48,137 @@
       <p class="section-intro">Selected repositories and client tracks from recent production work.</p>
       <div class="grid">
         <article class="card">
-          <div class="card__meta"><span>2026-04-04</span><span>Plugin / Client work</span></div>
+          <div class="card__meta"><span>2026-09-15</span><span>Client work</span></div>
+          <h3>Kane Exceleris</h3>
+          <p>Corporate site built end to end from Figma: static Vite + BEM build loaded into WordPress through a single mu-plugin, custom Elementor widgets with repeaters, mega menu driven by WordPress menus over REST, insights template with share counters, subscribe band with CSV export and reCAPTCHA.</p>
+          <p class="stack">Stack: WordPress, Elementor, Vite, JavaScript, PHP, Figma</p>
+          <span class="muted">Private client repository</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-09-15</span><span>Client work</span></div>
+          <h3>Kane's Guide Member Directory</h3>
+          <p>Business directory on WordPress: profile moderation (pending profiles greyed and sorted last, Approved badge, admin toggle), member dashboard rebuilt from a single field descriptor, Yoast SEO handover, visual regression snapshot scripts.</p>
+          <p class="stack">Stack: WordPress, Elementor, PHP, Yoast SEO, Docker</p>
+          <span class="muted">Private client repository</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-09-13</span><span>E-commerce / SEO</span></div>
+          <h3>COMPICE Laptop Store</h3>
+          <p>WooCommerce store for refurbished laptops: rebuilt homepage, product titles from attributes, 301s for sold items, Google Merchant and Meta catalog titles, Hotline/Price.ua feeds, GA4 funnel, local SEO schema, cache warm-up, font preloading. Plus an OLX API auto-publisher.</p>
+          <p class="stack">Stack: WooCommerce, PHP, GA4, Google Merchant Center, Python</p>
+          <span class="muted">Private repository</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-09-10</span><span>Client work</span></div>
+          <h3>Acorntech Group (WooCommerce B2B)</h3>
+          <p>WooCommerce wholesale catalog: 18+ age gate for alcohol categories, custom fuzzy AJAX search plugin, two-tier header and full-screen mobile menu, box-based quantity units, cache purge bridge, plugin and theme updates.</p>
+          <p class="stack">Stack: WooCommerce, Astra, Elementor, PHP, JavaScript</p>
+          <span class="muted">Private client repository</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-09-10</span><span>Client work</span></div>
+          <h3>Bricks &amp; Divi Client Sites</h3>
+          <p>Seek Yoga Studio (Divi): online offerings with Stripe checkout and a 300-hour YTT waitlist page with stored submissions. Verlan Preserve HOA (Bricks): board and community pages, Google Calendar, county GIS lot map. LCLS: Summer Reading Challenge prizes plugin with filterable catalog.</p>
+          <p class="stack">Stack: WordPress, Bricks, Divi, PHP, Stripe, ACF</p>
+          <span class="muted">Private client repositories</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-09-08</span><span>Bugfix / Integration</span></div>
+          <h3>Supervolt.de VAT &amp; Billbee Fixes</h3>
+          <p>Intra-Community reverse-charge orders: net shipping for VAT-exempt orders, prepayment discount mapped to the 0% article in Billbee, sub-cent tax rounding hidden at checkout, WPML language flag switcher. Verified end to end on test orders in Billbee.</p>
+          <p class="stack">Stack: WooCommerce, PHP, Billbee API, WPML</p>
+          <a href="https://github.com/uaeconomclass/supervolt.de" target="_blank" rel="noopener noreferrer">Open repository</a>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-09-04</span><span>Product / Accessibility</span></div>
+          <h3>WCAG 2.2 Auditor + Bricks Plugin</h3>
+          <p>External accessibility auditor: crawls a site in a real browser with axe-core, scripted reflow/resize/keyboard/focus checks, veraPDF for documents, LLM review, dashboard in EN/UK/ES, Docker deploy. Paired WordPress plugin maps findings to Bricks elements via the Abilities API and MCP, with a "What to fix" admin screen and scheduled rescans.</p>
+          <p class="stack">Stack: Node.js, TypeScript, Playwright, axe-core, SQLite, Docker, WordPress Abilities API, MCP</p>
+          <span class="muted">Private repository</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-09-03</span><span>Client work</span></div>
+          <h3>AudioVS (audiovs.com.au)</h3>
+          <p>Figma → Vite/BEM → WordPress/Elementor build with WooCommerce catalog: catalog repair and price audit, product search, Embla sliders, live Instagram feed, GTM/GA4/Search Console, stored form submissions, spam hardening, production launch after domain move.</p>
+          <p class="stack">Stack: WordPress, Elementor, WooCommerce, ACF, Vite, JavaScript</p>
+          <span class="muted">Private client repository</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-09-03</span><span>Migration / Accessibility</span></div>
+          <h3>Wyoming State Treasurer's Office</h3>
+          <p>Migration of a government site from Divi to Bricks with WCAG 2.2 remediation: Docker + Mutagen local stack with a Divi reference, CSS adaptation layer, query-loop news grids, mobile Safari fixes, comparative audit follow-up and accessibility report.</p>
+          <p class="stack">Stack: WordPress, Bricks, PHP, Docker, WCAG 2.2</p>
+          <span class="muted">Private client repository</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-09-03</span><span>Theme work</span></div>
+          <h3>Aussie Web Dev Agency Site</h3>
+          <p>Custom WordPress theme from Figma without page builders: SCSS/webpack build, fully ACF-editable homepage, GSAP/ScrollTrigger + Lenis animations, portfolio drag gallery with lightbox, Calendly "Book Now", lead storage, REST deploy endpoint.</p>
+          <p class="stack">Stack: WordPress, PHP, ACF, SCSS, webpack, GSAP, Swiper</p>
+          <span class="muted">Private client repository</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-09-01</span><span>SaaS product</span></div>
+          <h3>Multi-Tenant CRM</h3>
+          <p>Industry-neutral CRM in production for a veterinary clinic: PostgreSQL Row-Level Security tenant isolation with boundary tests, appointments and patient records, industry modules (vet, barbershop), monthly invoicing and usage metering, email failover (Resend/Brevo/SES), per-business sites on subdomains, CI on every push.</p>
+          <p class="stack">Stack: Next.js 16, React 19, TypeScript, Prisma, PostgreSQL (Neon), NextAuth, Vercel, Vitest</p>
+          <span class="muted">Private repository</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-08-21</span><span>Client work / Import</span></div>
+          <h3>Global Electric EV Catalog</h3>
+          <p>WooCommerce EV dealer: production importer plugin (source parser, queue, change hashes, cron, WP-CLI, admin page), variable products with per-color galleries and trim cards, Elementor catalog widget with filters and "in transit" status, WPML.</p>
+          <p class="stack">Stack: WooCommerce, PHP, WP-CLI, Elementor, WPML, Python</p>
+          <span class="muted">Private client repository</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-08-20</span><span>Client work / Integration</span></div>
+          <h3>TLR Contracting + JobAdder</h3>
+          <p>Recruitment site from Figma on Elementor with JobAdder API integration: OAuth connection, job ads synced into a CPT with AJAX filters and linkable URLs, site applications pushed to JobAdder as candidates with screening answers and attachments, editable mega menu.</p>
+          <p class="stack">Stack: WordPress, Elementor, PHP, JobAdder API, OAuth 2.0, Vite</p>
+          <span class="muted">Private client repository</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-08</span><span>Performance &amp; Security</span></div>
+          <h3>WordPress Rescue Track</h3>
+          <p>Server and code rescue on live sites: PHP 8.3 upgrades, Redis and OPcache, nginx cache fixes, MySQL tuning, admin-ajax profiling and bot blocking for a WooCommerce CPU limit, reflected XSS fix and output escaping, dead template removal, media compression (954 → 682 MB), post-breach hardening.</p>
+          <p class="stack">Stack: PHP, WordPress, WooCommerce, nginx, MySQL, Redis, Linux, SSH</p>
+          <span class="muted">Private client repositories</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-07-21</span><span>Client work</span></div>
+          <h3>Digitalize Agency Site</h3>
+          <p>React + Vite + Tailwind app with a dual build: standalone SPA and a WordPress theme. All pages wired to ACF with fallbacks, case studies CPT, CF7 REST contact form with lead logging and spam filters, FTP deploy script.</p>
+          <p class="stack">Stack: React, TypeScript, Vite, Tailwind CSS, WordPress, ACF</p>
+          <a href="https://github.com/Romannn9/Digitalizedemo" target="_blank" rel="noopener noreferrer">Open repository</a>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-05-12</span><span>Theme work</span></div>
+          <h3>React → Gutenberg Block Themes</h3>
+          <p>Edmarz Electric and Autohaven: React prototypes turned into WordPress themes where shared components are the single source of layout for the Vite preview, Gutenberg editor and PHP-rendered frontend. Editable homepage blocks, vehicle CPT, service areas hub.</p>
+          <p class="stack">Stack: React, TypeScript, Gutenberg Blocks, Tailwind CSS, PHP, Vite</p>
+          <span class="muted">Private client repositories</span>
+        </article>
+
+        <article class="card">
+          <div class="card__meta"><span>2026-04-28</span><span>Plugin / Client work</span></div>
           <h3>LCLS LibCal Plugin</h3>
-          <p>WordPress shortcode plugin for LibCal calendar integration: public calendar widgets, admin shortcode helper, all-day event toggle, multi-calendar combining, and event filtering UI.</p>
+          <p>WordPress shortcode plugin for LibCal calendar integration: OAuth API client, public calendar widgets, admin shortcode helper, all-day event toggle, multi-calendar combining, configurable upcoming card views, and event filtering UI.</p>
           <p class="stack">Stack: WordPress, PHP, Shortcode API</p>
           <span class="muted">Private client repository</span>
         </article>
