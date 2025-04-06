@@ -1,6 +1,6 @@
 # Valentyn Moroz
 
-**WordPress / React / Firebase**  
+**WordPress / WooCommerce / React**  
 **Full-Stack Developer**
 
 📍 Vinnytsia, Ukraine  
@@ -13,12 +13,12 @@
 
 ## Profile
 
-Full-Stack **WordPress / React / Firebase Developer** with **18+ years of professional experience**.  
-I specialize in **custom plugins**, **WooCommerce extensions**, **headless WordPress architecture**, **React + Firebase applications**, and **API integrations**.
+Full-Stack **WordPress / WooCommerce / React Developer** with **18+ years of professional experience**.  
+I specialize in **Figma-to-WordPress builds (Elementor, Bricks, Gutenberg)**, **custom plugins**, **WooCommerce extensions**, **API integrations**, and **React / Next.js applications**.
 
-My core strength is working with **real production systems**: stabilizing legacy code, post-migration cleanup, fixing critical issues without downtime, and building solutions that fit existing business workflows instead of breaking them.
+My core strength is working with **real production systems**: stabilizing legacy code, performance and security rescue, WCAG 2.2 accessibility, fixing critical issues without downtime, and building solutions that fit existing business workflows instead of breaking them.
 
-Consistently positive feedback from clients in **USA and Europe**.
+Consistently positive feedback from clients in **USA, Europe, and Australia**.
 
 ---
 
@@ -35,30 +35,31 @@ Consistently positive feedback from clients in **USA and Europe**.
 ### Backend
 - PHP, WordPress Core, Hooks & Filters  
 - WooCommerce Extensions  
-- Shopify (Liquid, Custom Apps)  
-- REST API, GraphQL  
-- Symfony (API-oriented backend)  
+- Elementor, Bricks, ACF  
+- Next.js, Prisma, PostgreSQL  
+- REST API, GraphQL, WP-CLI  
 - MySQL, Custom Plugins
 
 ### Frontend
-- JavaScript, React, Vite  
+- JavaScript, TypeScript, React  
+- Vite, Gutenberg Blocks  
 - Firebase / Firestore  
-- Gutenberg Blocks  
-- HTML5, CSS3, SCSS, Tailwind
+- HTML5, SCSS, Tailwind, GSAP
 
 ### Integrations
 - Stripe, PayPal, WooPayments  
-- SendGrid, Twilio  
-- OpenAI API, AI-powered systems  
-- CRM / ERP: Billbee, Odoo
+- JobAdder, Billbee, SendGrid  
+- GA4, GTM, Google Merchant Center  
+- OpenAI API, Shopify
 
 ### DevOps
-- Git, GitHub  
-- Docker, Linux, SSH
+- Git, GitHub Actions  
+- Docker, Linux, nginx, SSH  
+- Vercel, Cloudflare Pages
 
-### Automation
-- Puppeteer, Headless Browsers  
-- Web scraping for API-less systems
+### Quality & Automation
+- WCAG 2.2, axe-core  
+- Playwright, Puppeteer
 
 ---
 
@@ -78,26 +79,31 @@ Consistently positive feedback from clients in **USA and Europe**.
 
 ## Key Projects
 
-### Headless WordPress + Newsletter System  
-**Headless CMS | REST API | SendGrid | Editorial Workflow**
+### Recruitment Site + JobAdder Integration (oak-tree.tech)  
+**Figma | Elementor | Vite | PHP | JobAdder API | OAuth 2.0**
 
-Built a headless CMS for blog/news with custom frontend, role-based access control, and SendGrid integration.  
-Result: content team works independently without developer involvement.
-
----
-
-### WooCommerce Voucher & Loyalty System  
-**WooCommerce | Billbee API | VAT Handling | Production Fix**
-
-Developed custom gift certificate logic and billing integration. Fixed a critical production bug in version comparison logic without downtime, preserving existing client workflow.
+Figma-to-Elementor build with JobAdder integration: job ads synced into a CPT with AJAX filters, site applications pushed to JobAdder as candidates with screening answers and attachments. Same flow shipped the AudioVS WooCommerce store and Kane Exceleris.
 
 ---
 
-### AI-Powered Product Matching Plugin  
-**OpenAI API | WordPress | Shopify | JSON Decision Engine**
+### Multi-Tenant CRM (SaaS)  
+**Next.js | TypeScript | Prisma | PostgreSQL RLS | Vercel**
 
-Built an AI module for personalized clothing recommendations based on user parameters.  
-Designed as a **SaaS-ready architecture** with scalable multi-tenant support.
+CRM in production for a veterinary clinic: tenant isolation via Row-Level Security with boundary tests, industry modules, invoicing and usage metering, email provider failover, business sites on subdomains, CI on every push.
+
+---
+
+### Divi → Bricks Migration + WCAG 2.2 Auditor  
+**Bricks | Docker | Playwright | axe-core | WordPress Abilities API**
+
+Migrated the Wyoming State Treasurer's Office site to Bricks with WCAG 2.2 remediation. Built an external auditor (axe-core, keyboard/reflow checks, PDF validation) and a plugin that maps findings to Bricks elements.
+
+---
+
+### WooCommerce VAT, Voucher & Billbee Fixes  
+**WooCommerce | Billbee API | Reverse-Charge VAT | Production Fix**
+
+Fixed voucher/cart totals and intra-Community reverse-charge orders (net shipping, 0% discount mapping in Billbee) on a live German store without downtime, verified end to end in Billbee.
 
 ---
 
@@ -107,10 +113,10 @@ Designed as a **SaaS-ready architecture** with scalable multi-tenant support.
 **Dec 2025 – Present**  
 **oak-tree.tech**
 
-- WordPress plugin development: custom Gutenberg blocks, shortcode APIs, admin tooling, REST endpoints  
-- React + Vite + Firebase/Firestore: admin dashboards, user-facing platforms, PR-based delivery workflow  
-- WordPress production maintenance: CF7 integrations, CSS refactors, multi-site client support  
-- Custom plugins for LibCal calendar embedding and email export tooling
+- Figma → Vite/BEM → WordPress/Elementor builds for an Australian agency (AudioVS, TLR Contracting, Kane Exceleris)  
+- Integrations: JobAdder API (OAuth, jobs sync, applications), WooCommerce catalogs, GA4/GTM, Instagram feed  
+- React + Vite + Firebase/Firestore: Networking Executives admin dashboard and user platform (review queues, audit trail, CSV export, SEO prerender)  
+- WordPress plugins: LibCal calendar (OAuth API), Gutenberg blocks, member directory moderation, REST deploy endpoints
 
 ---
 
@@ -183,7 +189,7 @@ The `valentyn-moroz-cv.pdf` is generated from `index.html` using Playwright (Chr
 const { chromium } = require('C:/Users/User/AppData/Roaming/npm/node_modules/@playwright/mcp/node_modules/playwright');
 
 (async () => {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({ channel: 'chrome' });
   const page = await browser.newPage();
   await page.goto('file:///C:/GIT/uaeconomclass.github.io/index.html');
   await page.waitForLoadState('networkidle');
