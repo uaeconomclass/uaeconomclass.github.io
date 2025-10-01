@@ -25,7 +25,8 @@ Consistently positive feedback from clients in **USA, Europe, and Australia**.
 ## Key Metrics
 
 - **18+ years** of experience  
-- **100% Job Success Score** (Upwork)  
+- **100% Job Success Score**, **Top Rated** (Upwork)  
+- **95 Upwork jobs**, **2,025+ hours**  
 - **5.0 rating**
 
 ---
