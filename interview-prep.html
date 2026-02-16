@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Prep</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
+    padding: 20px;
+    max-width: 860px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  h1 { margin-bottom: 8px; font-size: 1.6em; }
+  .subtitle { color: #8b949e; margin-bottom: 24px; font-size: 0.95em; }
+  .section { margin-bottom: 28px; }
+  .section-title {
+    font-size: 1.15em;
+    font-weight: 700;
+    color: #58a6ff;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #21262d;
+  }
+  details {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: border-color 0.2s;
+  }
+  details:hover { border-color: #58a6ff; }
+  details[open] { border-color: #58a6ff; }
+  summary {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95em;
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before {
+    content: '\25B6';
+    font-size: 0.7em;
+    color: #58a6ff;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  details[open] summary::before { transform: rotate(90deg); }
+  .q-text { display: flex; flex-direction: column; gap: 2px; }
+  .q-ukr { color: #8b949e; font-weight: 400; font-size: 0.88em; }
+  .answer {
+    padding: 0 16px 16px 16px;
+    color: #c9d1d9;
+    font-size: 0.9em;
+  }
+  .answer ul { padding-left: 20px; margin: 6px 0; }
+  .answer li { margin-bottom: 4px; }
+  .answer strong { color: #e6edf3; }
+  .answer code {
+    background: #0d1117;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: #79c0ff;
+  }
+  .answer pre {
+    background: #0d1117;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 8px 0;
+    font-size: 0.85em;
+    color: #79c0ff;
+  }
+  .tip {
+    background: #122d1e;
+    border-left: 3px solid #3fb950;
+    padding: 8px 12px;
+    border-radius: 0 6px 6px 0;
+    margin: 8px 0;
+    font-size: 0.88em;
+  }
+  .warn {
+    background: #2d1b0e;
+    border-left: 3px solid #d29922;
+    padding: 8px 12px;
+    border-radius: 0 6px 6px 0;
+    margin: 8px 0;
+    font-size: 0.88em;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 0.7em;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 400;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .tag-code { background: #1f3a5f; color: #58a6ff; }
+  .tag-deep { background: #3b1f5f; color: #bc8cff; }
+  .tag-culture { background: #1f3f2a; color: #3fb950; }
+  .tag-product { background: #3f2a1f; color: #d29922; }
+  .lang-divider {
+    border: 0;
+    border-top: 1px dashed #30363d;
+    margin: 14px 0;
+  }
+  .lang-label {
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .lang-en { color: #58a6ff; }
+  .lang-uk { color: #f0883e; }
+</style>
+</head>
+<body>
+
+<h1>Interview Prep — Billy / Moda</h1>
+<p class="subtitle">Mon 8:00 AM PST = 18:00 Kyiv. Click question to expand.</p>
+
+<!-- ==================== QUICK SHORT ANSWERS ==================== -->
+<div class="section">
+<div class="section-title">Quick Answers (Short Version)</div>
+
+<details>
+<summary><span class="tag tag-code">short</span> <span class="q-text">Walk me through your architecture</span></summary>
+<div class="answer">
+<p>I structured the plugin into clear layers so each part has one responsibility: schema, repository for SQL, REST controller, admin UI, and CLI seeder. It keeps changes safer under deadline pressure and makes the code easier to maintain.</p>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-code">short</span> <span class="q-text">Why custom tables instead of CPT + postmeta?</span></summary>
+<div class="answer">
+<p>For small projects, CPT + postmeta can work well. At larger scale, it gets slower and harder to optimize, so I used custom tables for better data types, indexing, and cleaner many-to-many relationships.</p>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-deep">short</span> <span class="q-text">How would you improve q= search at 100k+?</span></summary>
+<div class="answer">
+<p>At 100k+ records, broad LIKE search becomes expensive. I would move to FULLTEXT or prefix search, add caching for repeated queries, and switch to cursor pagination so deep pages stay fast.</p>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-deep">short</span> <span class="q-text">Would you replace correlated subquery for celebrity_count?</span></summary>
+<div class="answer">
+<p>For current page sizes, the correlated subquery is practical and easy to reason about. As volume grows, I would replace it with an aggregate join or a denormalized counter to reduce repeated per-row work.</p>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-deep">short</span> <span class="q-text">Why manage_options vs custom capability?</span></summary>
+<div class="answer">
+<p>I used manage_options as an MVP-safe baseline because it is quick to implement and secure for admin-only writes. For production, I would move to a custom capability like manage_moda to follow least-privilege access.</p>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-deep">short</span> <span class="q-text">How would you handle migrations/versioning?</span></summary>
+<div class="answer">
+<p>I would store a schema version in wp_options and run sequential idempotent migrations on upgrade. This keeps deployments predictable and makes migrations safe to rerun across environments.</p>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-culture">short</span> <span class="q-text">You see a broken thing outside your task</span></summary>
+<div class="answer">
+<p>If the issue is small, I fix it right away and include it in my update. If it is larger, I document impact, estimate effort, and propose a clear plan instead of ignoring it.</p>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-culture">short</span> <span class="q-text">How do you handle urgent deadlines?</span></summary>
+<div class="answer">
+<p>Under urgent deadlines, I prioritize the critical user flow first and ship a stable core. I communicate risks early and split work into clear milestones so progress stays visible.</p>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-culture">short</span> <span class="q-text">How do you communicate progress?</span></summary>
+<div class="answer">
+<p>I keep communication simple and regular: what is done, what is next, and what is blocked. If ETA changes, I report it early so there are no surprises.</p>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-product">short</span> <span class="q-text">What is your first 2-week plan?</span></summary>
+<div class="answer">
+<p>In week one, I would audit the system and deliver a few quick wins. In week two, I would ship the highest-impact fixes and show measurable before/after results.</p>
+</div>
+</details>
+
+</div>
+
+<!-- ==================== CODE WALKTHROUGH ==================== -->
+<div class="section">
+<div class="section-title">Code Walkthrough</div>
+
+<details>
+<summary><span class="tag tag-code">code</span> <span class="q-text">Walk me through your architecture. Why this structure? <span class="q-ukr">Розкажи про архітектуру. Чому така структура?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li><strong>5 classes, separation of concerns:</strong>
+    <ul>
+      <li><code>Moda_Database</code> — schema only, stateless, runs on activation</li>
+      <li><code>Moda_Stylist_Repository</code> — data access layer, all SQL lives here</li>
+      <li><code>Moda_REST_Controller</code> — API layer, validation + sanitization, delegates to repository</li>
+      <li><code>Moda_Admin</code> — presentation layer, admin screens</li>
+      <li><code>Moda_Seeder</code> — WP-CLI commands for seeding and verification</li>
+    </ul>
+  </li>
+  <li><strong>Dependency injection:</strong> Repository is injected into Controller and Admin via constructor — easy to test, single source of data logic</li>
+  <li><strong>Entry point</strong> (<code>moda-mini-module.php</code>): wires everything on <code>plugins_loaded</code>, Admin only loads in <code>is_admin()</code> context</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li><strong>5 класів, розділення відповідальності:</strong>
+    <ul>
+      <li><code>Moda_Database</code> — тільки схема, без стану, виконується при активації</li>
+      <li><code>Moda_Stylist_Repository</code> — рівень доступу до даних, весь SQL тут</li>
+      <li><code>Moda_REST_Controller</code> — рівень API, валідація + санітизація, делегує в repository</li>
+      <li><code>Moda_Admin</code> — рівень презентації, адмін-екрани</li>
+      <li><code>Moda_Seeder</code> — WP-CLI команди для сідування та верифікації</li>
+    </ul>
+  </li>
+  <li><strong>Dependency injection:</strong> Repository інжектиться в Controller і Admin через конструктор — легко тестувати, єдине джерело логіки даних</li>
+  <li><strong>Entry point</strong> (<code>moda-mini-module.php</code>): з'єднує все на <code>plugins_loaded</code>, Admin завантажується тільки в <code>is_admin()</code></li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-code">code</span> <span class="q-text">Why custom tables instead of CPT + postmeta? <span class="q-ukr">Чому кастомні таблиці, а не CPT + postmeta?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li><strong>postmeta = EAV pattern</strong> — each field is a separate row, JOINs multiply, no proper indexing on values</li>
+  <li>At 100k+ records, postmeta queries become unbearably slow</li>
+  <li><strong>Custom tables:</strong> proper columns, proper data types, proper indexes, predictable query plans</li>
+  <li>Many-to-many relationship (stylist ↔ celebrity) needs a link table — postmeta can't model this cleanly</li>
+  <li>Reps are 1:N with their own fields — a separate table is natural</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li><strong>postmeta = EAV патерн</strong> — кожне поле = окремий рядок, JOIN'и множаться, немає нормальних індексів</li>
+  <li>При 100k+ записів postmeta запити стають нестерпно повільними</li>
+  <li><strong>Кастомні таблиці:</strong> правильні колонки, типи даних, індекси, передбачувані query plans</li>
+  <li>Many-to-many (stylist ↔ celebrity) потребує link table — postmeta це не моделює</li>
+  <li>Reps = 1:N з власними полями — окрема таблиця це природно</li>
+</ul>
+<div class="tip">Це прямо мапиться на їхній продукт — bookingagentinfo.com має схожі обсяги і зв'язки.</div>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-code">code</span> <span class="q-text">Explain the correlated subquery for celebrity_count <span class="q-ukr">Поясни корельований підзапит для celebrity_count</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<p>Line 88-99 in <code>class-moda-stylist-repository.php</code>:</p>
+<pre>(SELECT COUNT(*) FROM links WHERE stylist_id = s.id) AS celebrity_count</pre>
+<ul>
+  <li><strong>Why not LEFT JOIN + COUNT?</strong> When celebrity filter adds an INNER JOIN to the links table, a LEFT JOIN for counting creates a cartesian product — duplicated rows, wrong counts</li>
+  <li>Correlated subquery runs per-row, but with <code>idx_stylist</code> index it's O(log n) per row</li>
+  <li>With 20 rows per page = 20 fast subqueries. Totally acceptable.</li>
+  <li><strong>At larger scale:</strong> replace with aggregate subquery in FROM clause or denormalized column</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li><strong>Чому не LEFT JOIN + COUNT?</strong> Коли фільтр celebrity додає INNER JOIN, LEFT JOIN для підрахунку створює декартів добуток — дублі, неправильні рахунки</li>
+  <li>Корельований підзапит виконується per-row, але з індексом <code>idx_stylist</code> це O(log n) на рядок</li>
+  <li>20 рядків на сторінку = 20 швидких підзапитів. Цілком прийнятно.</li>
+  <li><strong>При більшому масштабі:</strong> замінити на aggregate subquery в FROM або денормалізований стовпець</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-code">code</span> <span class="q-text">Why GROUP BY s.id in the list query? <span class="q-ukr">Навіщо GROUP BY s.id у запиті списку?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li>When celebrity filter adds INNER JOIN on the links table, one stylist may match multiple celebrities</li>
+  <li>GROUP BY deduplicates — each stylist appears once in results</li>
+  <li>COUNT query uses <code>COUNT(DISTINCT s.id)</code> for the same reason</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li>Коли фільтр celebrity додає INNER JOIN, один стиліст може матчити кількох celebrities</li>
+  <li>GROUP BY дедуплікує — кожен стиліст з'являється один раз</li>
+  <li>COUNT запит використовує <code>COUNT(DISTINCT s.id)</code> з тієї ж причини</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-code">code</span> <span class="q-text">How does the celebrity filter work (ID vs name)? <span class="q-ukr">Як працює фільтр по celebrity (ID vs ім'я)?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li><strong>By ID</strong> (<code>?celebrity=42</code>): <code>INNER JOIN links ON stylist_id = s.id WHERE celebrity_id = 42</code> — single indexed join via <code>idx_celebrity_stylist</code></li>
+  <li><strong>By name</strong> (<code>?celebrity=Taylor</code>): adds second join to celebrities table, filters with <code>LIKE '%Taylor%'</code></li>
+  <li><code>ctype_digit()</code> determines which path to take</li>
+  <li>Both paths hit indexes on the join columns</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li><strong>По ID</strong> (<code>?celebrity=42</code>): один індексований JOIN через <code>idx_celebrity_stylist</code></li>
+  <li><strong>По імені</strong> (<code>?celebrity=Taylor</code>): додає другий JOIN до celebrities, фільтрує <code>LIKE '%Taylor%'</code></li>
+  <li><code>ctype_digit()</code> визначає який шлях обрати</li>
+  <li>Обидва шляхи використовують індекси на join-колонках</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-code">code</span> <span class="q-text">How does the seeder work? Why batch inserts? <span class="q-ukr">Як працює сідер? Чому батч-інсерти?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li>Chunks of 500 rows per INSERT — balances memory vs speed</li>
+  <li><code>INSERT IGNORE</code> for links — handles unique constraint violations silently (random pairs may collide)</li>
+  <li>Retry loop for links: keeps inserting until target count reached (since IGNORE skips dupes)</li>
+  <li><code>--truncate</code> flag clears data before seeding</li>
+  <li>Reps: 1-3 per stylist, random company/territory from predefined arrays</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li>Чанки по 500 рядків за INSERT — баланс між пам'яттю та швидкістю</li>
+  <li><code>INSERT IGNORE</code> для links — тихо обробляє порушення unique constraint (випадкові пари можуть збігатися)</li>
+  <li>Retry loop: продовжує вставляти доки не досягне цільової кількості</li>
+  <li><code>--truncate</code> очищає дані перед сідуванням</li>
+  <li>Reps: 1-3 на стиліста, випадкова компанія/територія з масивів</li>
+</ul>
+<div class="tip">Згадай тайминг: "2000 stylists + 5000 celebs + 30000 links за ~10 секунд."</div>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-code">code</span> <span class="q-text">Tell me about security in your plugin <span class="q-ukr">Розкажи про безпеку в плагіні</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li><strong>SQL injection:</strong> all queries use <code>$wpdb->prepare()</code>, <code>$wpdb->insert()</code>, <code>$wpdb->update()</code>, <code>$wpdb->delete()</code></li>
+  <li><strong>XSS:</strong> all output uses <code>esc_html()</code>, <code>esc_attr()</code>, <code>esc_url()</code></li>
+  <li><strong>CSRF:</strong> admin forms use <code>wp_nonce_field()</code> + <code>check_admin_referer()</code></li>
+  <li><strong>Authorization:</strong> REST write endpoints use <code>permission_callback</code> with <code>current_user_can('manage_options')</code></li>
+  <li><strong>Input sanitization:</strong> <code>sanitize_text_field</code>, <code>sanitize_email</code>, <code>esc_url_raw</code> for all inputs</li>
+  <li><strong>Destructive actions:</strong> JS <code>confirm()</code> dialogs before delete/detach</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li><strong>SQL injection:</strong> всі запити через <code>$wpdb->prepare()</code> та типізовані методи</li>
+  <li><strong>XSS:</strong> весь вивід через <code>esc_html()</code>, <code>esc_attr()</code>, <code>esc_url()</code></li>
+  <li><strong>CSRF:</strong> адмін-форми з <code>wp_nonce_field()</code> + <code>check_admin_referer()</code></li>
+  <li><strong>Авторизація:</strong> REST write ендпоінти з <code>permission_callback</code> + <code>current_user_can('manage_options')</code></li>
+  <li><strong>Санітизація:</strong> <code>sanitize_text_field</code>, <code>sanitize_email</code>, <code>esc_url_raw</code></li>
+  <li><strong>Деструктивні дії:</strong> JS <code>confirm()</code> перед видаленням/від'єднанням</li>
+</ul>
+</div>
+</details>
+
+</div>
+
+<!-- ==================== DEEP TECHNICAL ==================== -->
+<div class="section">
+<div class="section-title">Deep Technical Questions (from Billy's chat)</div>
+
+<details>
+<summary><span class="tag tag-deep">deep</span> <span class="q-text">How would you improve q= search at 100k+ stylists? <span class="q-ukr">Як покращити пошук q= при 100k+ стилістів?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<p><strong>Current problem:</strong> <code>WHERE full_name LIKE '%query%'</code> — leading wildcard = full table scan.</p>
+<ul>
+  <li><strong>Step 1 — FULLTEXT index:</strong>
+    <pre>ALTER TABLE moda_stylists ADD FULLTEXT idx_ft_name (full_name);
+SELECT ... WHERE MATCH(full_name) AGAINST('+query*' IN BOOLEAN MODE);</pre>
+    MySQL native, zero dependencies
+  </li>
+  <li><strong>Step 2 — Prefix search fallback:</strong> <code>full_name LIKE 'query%'</code> — B-tree works for prefix</li>
+  <li><strong>Step 3 — Object cache:</strong> <code>wp_cache_get/set</code>, TTL 5 min</li>
+  <li><strong>Step 4 — Cursor pagination:</strong> <code>WHERE id &lt; :last_id ORDER BY id DESC LIMIT 20</code></li>
+  <li><strong>Step 5 — External search</strong> (if needed): Elasticsearch/Meilisearch for fuzzy</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<p><strong>Поточна проблема:</strong> <code>LIKE '%query%'</code> — wildcard на початку = повний скан таблиці.</p>
+<ul>
+  <li><strong>Крок 1 — FULLTEXT індекс:</strong> MySQL нативний, нуль залежностей, підтримує часткові збіги</li>
+  <li><strong>Крок 2 — Prefix search:</strong> <code>LIKE 'query%'</code> — B-tree індекс працює для префіксів</li>
+  <li><strong>Крок 3 — Object cache:</strong> <code>wp_cache_get/set</code>, TTL 5 хвилин для популярних запитів</li>
+  <li><strong>Крок 4 — Курсорна пагінація:</strong> замість OFFSET, який деградує на великих сторінках</li>
+  <li><strong>Крок 5 — Зовнішній пошук</strong> (якщо треба): Elasticsearch/Meilisearch для fuzzy/typo-tolerant</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-deep">deep</span> <span class="q-text">Would you replace the correlated subquery for celebrity_count? <span class="q-ukr">Чи замінив би корельований підзапит для celebrity_count?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<p><strong>Yes, at scale.</strong> Two options:</p>
+<p><strong>Option A — Aggregate subquery in FROM:</strong></p>
+<pre>SELECT s.*, COALESCE(counts.cnt, 0) AS celebrity_count
+FROM moda_stylists s
+LEFT JOIN (
+  SELECT stylist_id, COUNT(*) AS cnt
+  FROM moda_stylist_celebrity GROUP BY stylist_id
+) counts ON counts.stylist_id = s.id</pre>
+<p><strong>Option B — Denormalized column:</strong> <code>celebrity_count INT</code> in stylists, increment/decrement on attach/detach.</p>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<p><strong>Так, при масштабі.</strong> Два варіанти:</p>
+<ul>
+  <li><strong>Варіант A — Aggregate subquery:</strong> один скан links замість N підзапитів</li>
+  <li><strong>Варіант B — Денормалізована колонка:</strong> <code>celebrity_count</code> в stylists, інкремент/декремент при attach/detach. Швидший read, складніший write.</li>
+</ul>
+<div class="warn">Для поточного масштабу (2k стилістів, 20 на сторінку) корельований підзапит працює нормально. Premature optimization is the root of all evil.</div>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-deep">deep</span> <span class="q-text">Why manage_options vs a custom capability? <span class="q-ukr">Чому manage_options, а не кастомна capability?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li><strong>For MVP:</strong> <code>manage_options</code> — admin-only, quick, zero overhead</li>
+  <li><strong>For production:</strong> custom capability:
+    <pre>$role = get_role('administrator');
+$role->add_cap('manage_moda');
+add_role('moda_editor', 'Moda Editor', ['manage_moda' => true, 'read' => true]);</pre>
+  </li>
+  <li><strong>Principle of least privilege:</strong> editors don't need Settings access, but may need Moda access</li>
+  <li>Can separate <code>edit_moda</code>, <code>delete_moda</code>, <code>view_moda</code> later</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li><strong>Для MVP:</strong> <code>manage_options</code> — швидко, тільки адмін, нуль оверхеду</li>
+  <li><strong>Для продакшена:</strong> кастомна capability <code>manage_moda</code> + окрема роль <code>moda_editor</code></li>
+  <li><strong>Принцип найменших привілеїв:</strong> редактори не потребують доступу до Settings, але можуть потребувати Moda</li>
+  <li>Можна розділити на <code>edit_moda</code>, <code>delete_moda</code>, <code>view_moda</code> пізніше</li>
+</ul>
+<div class="tip">Вже згадав у README "What I Would Improve" — показує що думаєш наперед.</div>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-deep">deep</span> <span class="q-text">How would you handle migrations/versioning if schema evolves? <span class="q-ukr">Як обробляти міграції/версіонування при зміні схеми?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li>Store <code>moda_db_version</code> in <code>wp_options</code></li>
+  <li>On <code>plugins_loaded</code>: compare stored vs code version, run sequential migrations</li>
+</ul>
+<pre>$stored = get_option('moda_db_version', '0.0.0');
+if (version_compare($stored, '1.1.0', '&lt;')) {
+    self::migrate_to_1_1();
+}
+update_option('moda_db_version', MODA_PLUGIN_VERSION);</pre>
+<ul>
+  <li>Each migration is <strong>idempotent</strong> — safe to re-run</li>
+  <li><code>dbDelta</code> for new columns, raw <code>ALTER TABLE</code> for complex changes</li>
+  <li>WP-CLI: <code>wp moda migrate</code> for manual trigger</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li>Зберігати <code>moda_db_version</code> в <code>wp_options</code></li>
+  <li>На <code>plugins_loaded</code>: порівнюємо збережену версію з кодовою, запускаємо послідовні міграції</li>
+  <li>Кожна міграція <strong>ідемпотентна</strong> — безпечно перезапускати</li>
+  <li><code>dbDelta</code> для нових колонок, сирий <code>ALTER TABLE</code> для складних змін</li>
+  <li>WP-CLI: <code>wp moda migrate</code> для ручного запуску</li>
+</ul>
+</div>
+</details>
+
+</div>
+
+<!-- ==================== OTHER LIKELY ==================== -->
+<div class="section">
+<div class="section-title">Other Likely Technical Questions</div>
+
+<details>
+<summary><span class="tag tag-deep">deep</span> <span class="q-text">How would you add caching to the REST API? <span class="q-ukr">Як додати кешування до REST API?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li><strong>Object cache:</strong> <code>wp_cache_get/set</code> with group <code>'moda'</code> — works with Redis/Memcached</li>
+  <li>Cache key = hash of query params</li>
+  <li>TTL: 5 min list, 10 min detail</li>
+  <li><strong>Invalidation:</strong> <code>wp_cache_delete</code> on every write</li>
+  <li><strong>HTTP caching:</strong> <code>Cache-Control</code> headers for GET</li>
+  <li><strong>Transient API</strong> as fallback if no object cache</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li><strong>Object cache:</strong> <code>wp_cache_get/set</code> з групою <code>'moda'</code> — працює з Redis/Memcached</li>
+  <li>Cache key = хеш від параметрів запиту</li>
+  <li><strong>Інвалідація:</strong> <code>wp_cache_delete</code> при кожному write</li>
+  <li><strong>HTTP кешування:</strong> <code>Cache-Control</code> хедери для GET</li>
+  <li><strong>Transient API</strong> як fallback якщо немає object cache</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-deep">deep</span> <span class="q-text">How would you handle concurrent writes / race conditions? <span class="q-ukr">Як обробляти конкурентні записи / race conditions?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li><code>INSERT IGNORE</code> already protects against duplicate links</li>
+  <li><code>$wpdb->update</code> — implicit row-level locking in InnoDB</li>
+  <li><code>SELECT ... FOR UPDATE</code> for critical sections</li>
+  <li><strong>Optimistic locking:</strong> <code>version</code> column, <code>UPDATE WHERE version = Y</code></li>
+  <li>MySQL transactions: <code>$wpdb->query('START TRANSACTION')</code></li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li><code>INSERT IGNORE</code> вже захищає від дублів links</li>
+  <li><code>$wpdb->update</code> — неявне row-level блокування в InnoDB</li>
+  <li><code>SELECT ... FOR UPDATE</code> для критичних секцій</li>
+  <li><strong>Оптимістичне блокування:</strong> колонка <code>version</code>, <code>UPDATE WHERE version = Y</code></li>
+  <li>MySQL транзакції: <code>START TRANSACTION</code></li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-deep">deep</span> <span class="q-text">What about automated testing? <span class="q-ukr">Що щодо автоматичного тестування?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li><strong>PHPUnit + WP test suite</strong> (<code>wp-phpunit</code>)</li>
+  <li><strong>Repository tests:</strong> test DB, seed, assert queries</li>
+  <li><strong>REST tests:</strong> extend <code>WP_Test_REST_Controller_Testcase</code></li>
+  <li><strong>First priority:</strong> CRUD operations, then permissions, then edge cases</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li><strong>PHPUnit + WP test suite</strong> — інтеграційні тести з реальною БД</li>
+  <li><strong>Repository тести:</strong> створити таблиці в тестовій БД, сіднути, перевірити запити</li>
+  <li><strong>REST тести:</strong> мокнути auth, відправити запити, перевірити коди + дані</li>
+  <li><strong>Пріоритет:</strong> CRUD, потім permission callbacks, потім edge cases</li>
+</ul>
+<div class="tip">Вже згадав у README — перше що додам.</div>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-deep">deep</span> <span class="q-text">Why didn't you use WP_List_Table? <span class="q-ukr">Чому не використав WP_List_Table?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li><strong>Honest:</strong> 48-hour deadline, prioritized functionality</li>
+  <li>Current impl has sorting, filtering, pagination — works</li>
+  <li><strong>WP_List_Table:</strong> built-in sorting, bulk actions, screen options, consistent look</li>
+  <li><strong>If hired:</strong> quick refactor win</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li><strong>Чесно:</strong> дедлайн 48 годин, пріоритет на функціональність</li>
+  <li>Поточна реалізація має сортування, фільтри, пагінацію — працює</li>
+  <li><strong>WP_List_Table:</strong> вбудоване сортування, bulk actions, screen options, консистентний WP вигляд</li>
+  <li><strong>Якщо найнятий:</strong> швидкий рефакторинг</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-deep">deep</span> <span class="q-text">How would you handle soft deletes? <span class="q-ukr">Як реалізувати м'яке видалення?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li>Add <code>deleted_at DATETIME NULL</code></li>
+  <li>All queries: <code>WHERE deleted_at IS NULL</code></li>
+  <li>Delete = <code>UPDATE SET deleted_at = NOW()</code></li>
+  <li>Admin: view/restore deleted records</li>
+  <li>Cleanup: cron or WP-CLI</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li>Додати <code>deleted_at DATETIME NULL</code></li>
+  <li>Всі запити: <code>WHERE deleted_at IS NULL</code></li>
+  <li>Видалення = <code>UPDATE SET deleted_at = NOW()</code></li>
+  <li>Адмін: перегляд/відновлення видалених</li>
+  <li>Очищення: крон або WP-CLI</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-deep">deep</span> <span class="q-text">How would you make this multilingual? <span class="q-ukr">Як зробити це мультимовним?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li>For custom tables: WPML string translation or Polylang</li>
+  <li><strong>Approach 1:</strong> separate translation table</li>
+  <li><strong>Approach 2:</strong> language column + duplicated records</li>
+  <li>REST API: <code>?lang=es</code> parameter</li>
+  <li>Challenges: sync, slugs, SEO per language</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li>Для кастомних таблиць: WPML або Polylang</li>
+  <li><strong>Підхід 1:</strong> окрема таблиця перекладів <code>moda_stylists_translations(stylist_id, lang, full_name)</code></li>
+  <li><strong>Підхід 2:</strong> колонка language + дублювання записів</li>
+  <li>REST API: параметр <code>?lang=es</code></li>
+  <li>Складності: синхронізація, слаги, SEO по мовах</li>
+</ul>
+</div>
+</details>
+
+</div>
+
+<!-- ==================== CULTURE ==================== -->
+<div class="section">
+<div class="section-title">Product & Culture Fit</div>
+
+<details>
+<summary><span class="tag tag-product">product</span> <span class="q-text">Tell me about our product. Have you looked at bookingagentinfo.com? <span class="q-ukr">Розкажи про наш продукт. Дивився bookingagentinfo.com?</span></span></summary>
+<div class="answer">
+<div class="warn">ПОДИВИСЬ САЙТ ПЕРЕД ІНТЕРВ'Ю!</div>
+<p class="lang-label lang-en">EN</p>
+<p><strong>What it is:</strong> a paid subscription database of verified celebrity contacts — agents, managers, publicists. Companies like Coca-Cola, Netflix, Chanel use it to find who represents a celebrity and reach out for bookings, endorsements, brand deals.</p>
+<p><strong>Core features:</strong></p>
+<ul>
+  <li><strong>Celebrity database</strong> — searchable by category (music, sports, film/TV, comedy, influencers)</li>
+  <li><strong>Representative profiles</strong> — booking agents, managers, publicists with verified contact info, affiliations, languages, clientele</li>
+  <li><strong>Endorsement tracking</strong> — history of celebrity ↔ brand partnerships</li>
+  <li><strong>Social media metrics</strong> — engagement rates, reach, views per celebrity</li>
+  <li><strong>CRM tools</strong> — custom lists, email templates, bulk lookup</li>
+  <li><strong>News feed</strong> — real-time industry updates on collaborations</li>
+</ul>
+<p><strong>Business model:</strong> freemium subscription — free tier + premium with full access.</p>
+<p><strong>How my test project maps to their product:</strong></p>
+<ul>
+  <li><code>moda_celebrities</code> → their celebrity profiles (Drake, Beyonce...)</li>
+  <li><code>moda_stylists</code> → their agents / booking representatives</li>
+  <li><code>moda_stylist_reps</code> → representatives of representatives (agency contacts)</li>
+  <li><code>moda_stylist_celebrity</code> → celebrity ↔ agent link table</li>
+</ul>
+<p><strong>Say:</strong> "I looked at bookingagentinfo.com — I can see the test project mirrors your core data model: celebrities linked to their representatives with contact info and filtering. The custom tables approach I used would scale well for your data volume."</p>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<p><strong>Що це:</strong> платна база верифікованих контактів знаменитостей — агентів, менеджерів, публіцистів. Компанії типу Coca-Cola, Netflix, Chanel використовують щоб знайти хто представляє celebrity і зв'язатися для букінгів, ендорсментів, бренд-ділів.</p>
+<p><strong>Основні фічі:</strong></p>
+<ul>
+  <li><strong>База celebrities</strong> — пошук по категоріях (музика, спорт, кіно, комедія, інфлюенсери)</li>
+  <li><strong>Профілі представників</strong> — booking agents, менеджери, публіцисти з контактами, афіліаціями, мовами, клієнтурою</li>
+  <li><strong>Ендорсмент трекінг</strong> — історія партнерств celebrity ↔ бренд</li>
+  <li><strong>Метрики соцмереж</strong> — engagement rates, reach, views по celebrity</li>
+  <li><strong>CRM інструменти</strong> — кастомні списки, email шаблони, bulk lookup</li>
+  <li><strong>Стрічка новин</strong> — оновлення по колаборацях в реальному часі</li>
+</ul>
+<p><strong>Бізнес-модель:</strong> freemium підписка — безкоштовний тір + premium з повним доступом.</p>
+<p><strong>Як мій тестовий проєкт мапиться на їхній продукт:</strong></p>
+<ul>
+  <li><code>moda_celebrities</code> → їхні профілі celebrities (Drake, Beyonce...)</li>
+  <li><code>moda_stylists</code> → їхні агенти / booking representatives</li>
+  <li><code>moda_stylist_reps</code> → представники представників (контакти агенцій)</li>
+  <li><code>moda_stylist_celebrity</code> → link table celebrity ↔ агент</li>
+</ul>
+<p><strong>Скажи:</strong> "Я подивився bookingagentinfo.com — бачу що тестовий проєкт відзеркалює вашу core data model: celebrities зв'язані з представниками через контактну інфу і фільтрацію. Підхід з кастомними таблицями добре масштабується під ваші обсяги даних."</p>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-culture">culture</span> <span class="q-text">You see something broken that's not your task. What do you do? <span class="q-ukr">Бачиш щось зламане, але це не твоя задача. Що робиш?</span></span></summary>
+<div class="answer">
+<div class="warn">Їхня КЛЮЧОВА цінність. Billy написав: "We want someone who sees a problem and begins solving it."</div>
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li><strong>Small (&lt; 30 min):</strong> fix, commit, mention in update</li>
+  <li><strong>Medium (hours):</strong> document, estimate, propose</li>
+  <li><strong>Big (days):</strong> create ticket with details + approach</li>
+  <li><strong>Never:</strong> ignore or say "not my job"</li>
+</ul>
+<p>"I treat the product like it's mine."</p>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li><strong>Мале (&lt; 30 хв):</strong> фікшу, комічу, згадую в апдейті</li>
+  <li><strong>Середнє (години):</strong> документую, оцінюю, пропоную</li>
+  <li><strong>Велике (дні):</strong> створюю тікет з деталями + підходом</li>
+  <li><strong>Ніколи:</strong> ігнорувати або казати "не моя задача"</li>
+</ul>
+<p>"Я ставлюся до продукту як до свого."</p>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-culture">culture</span> <span class="q-text">How do you handle urgent deadlines? <span class="q-ukr">Як справляєшся з терміновими дедлайнами?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li>"I prioritize ruthlessly — ship working core first, polish later"</li>
+  <li>"Communicate early if at risk — no surprises"</li>
+  <li>"Comfortable working extended hours when it matters"</li>
+  <li>"Break work into milestones for visible progress"</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li>"Пріоритизую жорстко — спочатку робочий core, потім polish"</li>
+  <li>"Комунікую рано якщо є ризик — ніяких сюрпризів"</li>
+  <li>"Готовий працювати додатково коли це важливо"</li>
+  <li>"Розбиваю на етапи щоб прогрес був видимий"</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-culture">culture</span> <span class="q-text">How do you communicate progress? <span class="q-ukr">Як комунікуєш прогрес?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li>"Daily async updates: done, next, blockers"</li>
+  <li>"Don't wait to be asked — proactive"</li>
+  <li>"Share early demos for feedback before it's done"</li>
+  <li>"Document decisions and tradeoffs"</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li>"Щоденні асинхронні апдейти: зроблено, далі, блокери"</li>
+  <li>"Не чекаю поки запитають — проактивно"</li>
+  <li>"Шерю ранні демо для фідбеку до завершення"</li>
+  <li>"Документую рішення та трейдофи"</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><span class="tag tag-culture">culture</span> <span class="q-text">What would you improve if you joined the team? <span class="q-ukr">Що б покращив, якби приєднався до команди?</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li><strong>Don't say "everything is bad"</strong> — "I'd first audit, then prioritize"</li>
+  <li>Start: automated tests</li>
+  <li>Then: performance audit</li>
+  <li>Then: code consistency</li>
+  <li><strong>Ask:</strong> "What are the biggest pain points? I'd start there."</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li><strong>Не кажи "все погано"</strong> — "Спочатку аудит, потім пріоритизація"</li>
+  <li>Першим: автотести (впевненість у деплоях)</li>
+  <li>Далі: аудит продуктивності</li>
+  <li>Далі: консистентність коду</li>
+  <li><strong>Запитай:</strong> "Які найбільші болючі точки зараз? Я б почав з них."</li>
+</ul>
+</div>
+</details>
+
+</div>
+
+<!-- ==================== QUESTIONS TO ASK ==================== -->
+<div class="section">
+<div class="section-title">Questions to Ask Billy / Питання для Біллі</div>
+
+<details>
+<summary><span class="tag tag-product">ask</span> <span class="q-text">Your questions for them <span class="q-ukr">Твої питання до них</span></span></summary>
+<div class="answer">
+<p class="lang-label lang-en">EN</p>
+<ul>
+  <li>"What does the current tech stack look like? Custom plugins, theme-based, or a mix?"</li>
+  <li>"How do you handle deployments? Git-based, FTP, CI/CD?"</li>
+  <li>"What's the biggest technical challenge you're facing right now?"</li>
+  <li>"How does the team communicate day-to-day — Slack, standups, async?"</li>
+  <li>"What does a typical sprint look like? How are tasks prioritized?"</li>
+  <li>"You mentioned 3 sites — are they on the same codebase or separate?"</li>
+  <li>"What's the scale — how many users, how much data are we working with?"</li>
+</ul>
+<hr class="lang-divider">
+<p class="lang-label lang-uk">UA</p>
+<ul>
+  <li>"Який поточний стек? Кастомні плагіни, тема, або мікс?"</li>
+  <li>"Як деплоїте? Git, FTP, CI/CD?"</li>
+  <li>"Яка найбільша технічна проблема зараз?"</li>
+  <li>"Як команда комунікує — Slack, стендапи, асинхронно?"</li>
+  <li>"Як виглядає типовий спринт? Як пріоритизуються задачі?"</li>
+  <li>"Ви згадували 3 сайти — вони на одній кодовій базі чи окремих?"</li>
+  <li>"Який масштаб — скільки юзерів, скільки даних?"</li>
+</ul>
+</div>
+</details>
+
+</div>
+
+<script>
+document.addEventListener('click', function(e) {
+  const summary = e.target.closest('summary');
+  if (!summary) return;
+  const parent = summary.parentElement;
+  document.querySelectorAll('details[open]').forEach(function(d) {
+    if (d !== parent) d.removeAttribute('open');
+  });
+});
+</script>
+
+</body>
+</html>
