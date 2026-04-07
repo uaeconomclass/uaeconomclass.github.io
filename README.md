@@ -6,6 +6,7 @@
 📍 Vinnytsia, Ukraine  
 📧 morozvalentyn777@gmail.com   
 🔗 Upwork Profile: https://www.upwork.com/freelancers/~013563a358160baa29  
+🐙 GitHub: https://github.com/uaeconomclass  
 🌐 Resume: https://uaeconomclass.github.io/
 
 ---
