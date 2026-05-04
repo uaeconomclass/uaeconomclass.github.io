@@ -170,6 +170,38 @@ Designed as a **SaaS-ready architecture** with scalable multi-tenant support.
 
 ---
 
+## Generating the CV PDF
+
+The `valentyn-moroz-cv.pdf` is generated from `index.html` using Playwright (Chromium headless).
+
+**Prerequisites:** Node.js, `@playwright/mcp` installed globally (`npm install -g @playwright/mcp`).
+
+**Command:**
+
+```js
+// Save as gen-pdf.js and run: node gen-pdf.js
+const { chromium } = require('C:/Users/User/AppData/Roaming/npm/node_modules/@playwright/mcp/node_modules/playwright');
+
+(async () => {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+  await page.goto('file:///C:/GIT/uaeconomclass.github.io/index.html');
+  await page.waitForLoadState('networkidle');
+  await page.pdf({
+    path: 'C:/GIT/uaeconomclass.github.io/valentyn-moroz-cv.pdf',
+    format: 'A4',
+    printBackground: true,
+    margin: { top: '0', right: '0', bottom: '0', left: '0' }
+  });
+  await browser.close();
+  console.log('PDF generated successfully');
+})();
+```
+
+> After generating, commit the updated PDF: `git add valentyn-moroz-cv.pdf && git commit -m "docs: regenerate CV PDF"`
+
+---
+
 ## Education
 
 **Master of Science in Computer Engineering**  
