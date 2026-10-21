@@ -108,6 +108,13 @@ Fixed voucher/cart totals and intra-Community reverse-charge orders (net shippin
 
 ---
 
+### E-commerce Migrations & Sync (WooCommerce / Shopify)  
+**WooCommerce | Shopify | REST API | Data Import**
+
+Moved product catalogs between WooCommerce and Shopify via export/import. For a Ukrainian laptop store, imported products and stock from the accounting system (Pidpryiemets) into WooCommerce through its API and keep stock in sync.
+
+---
+
 ## Work Experience
 
 ### PHP / WordPress / React Developer  
